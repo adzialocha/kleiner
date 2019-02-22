@@ -1,0 +1,25 @@
+{
+   "name": "adz/kleiner",
+   "description": "Simple PHP web router",
+   "keywords": ["router", "routing", "boilerplate"],
+   "homepage": "https://github.com/adzialocha/kleiner",
+   "license": "MIT",
+   "authors": [
+      {
+         "name": "Andreas Dzialocha",
+         "email": "kontakt@andreasdzialocha.com",
+         "homepage": "https://andreasdzialocha.com/",
+         "role": "Creator/Developer"
+      }
+   ],
+   "require": {
+      "altorouter/altorouter": ">=1.2.0",
+      "catfan/medoo": ">=1.6.1",
+      "php": ">=7.1.0"
+   },
+   "autoload": {
+      "psr-4": {
+         "Kleiner\\": "src/Kleiner/"
+      }
+   }
+}
