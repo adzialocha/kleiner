@@ -1,5 +1,6 @@
 {
    "name": "adz/kleiner",
+   "type": "framework",
    "description": "Simple PHP web router",
    "keywords": ["router", "routing", "boilerplate"],
    "homepage": "https://github.com/adzialocha/kleiner",
@@ -8,7 +9,6 @@
       {
          "name": "Andreas Dzialocha",
          "email": "kontakt@andreasdzialocha.com",
-         "homepage": "https://andreasdzialocha.com/",
          "role": "Creator/Developer"
       }
    ],
@@ -19,7 +19,7 @@
    },
    "autoload": {
       "psr-4": {
-         "Kleiner\\": "src/Kleiner/"
+         "Kleiner\\": "/src"
       }
    }
 }

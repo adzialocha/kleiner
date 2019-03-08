@@ -11,7 +11,7 @@ use Kleiner\Response;
 use Kleiner\Service;
 use Kleiner\Utils\MarkupMinifier;
 
-class Application
+class Kleiner
 {
     protected $config;
 
@@ -25,7 +25,7 @@ class Application
 
     protected $db;
 
-    public function __construct ($config)
+    public function __construct ($viewsPath, $config)
     {
         $this->config = $config;
 
@@ -34,7 +34,7 @@ class Application
 
         // Prepare service instance
         $this->service = new Service($this->config);
-        $this->service->setViewsBasePath($this->config['viewsFolder']);
+        $this->service->setViewsBasePath($viewsPath);
 
         // Create a Request and Response instance for controllers
         $this->request = new Request($this->config);
@@ -64,7 +64,7 @@ class Application
 
     public function setupRoutes ($baseClass, $routesConfig)
     {
-        foreach ($routesConfig['routes'] as $routeConfig) {
+        foreach ($routesConfig as $routeConfig) {
 
             $controller = $baseClass .  $routeConfig['controller'];
             $path = $routeConfig['path'];
@@ -123,6 +123,7 @@ class Application
             $controllerName = $match['target'][0];
             $actionName = $match['target'][1];
         } else {
+            // @TODO
             $controllerName = 'ErrorController';
             $actionName = 'notFoundError';
         }

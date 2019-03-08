@@ -22,7 +22,6 @@ $config = [
     'assetsPath' => '/dist/',
     'basePath' => '/',
     'baseUrl' => 'https://www.mypage.com'
-    'viewsFolder' => __DIR__ . '/views/',
 ];
 
 $routes = [
@@ -33,7 +32,7 @@ $routes = [
     ],
 ];
 
-$app = new Kleiner($config);
+$app = new Kleiner(__DIR__ . '/views/', $config);
 
 $app->setupRoutes('MyPage\Controllers\\', $routes);
 
