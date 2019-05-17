@@ -61,3 +61,7 @@ class AdminController extends AuthController
     }
 }
 ```
+
+## License
+
+MIT
